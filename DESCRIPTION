@@ -11,5 +11,4 @@ Maintainer: Jobst Landgrebe <jlandgr1@gwdg.de>
 Depends: MASS
 License: GPL version 2 or newer
 URL: http:///www.bioconductor.org, http://www.microarrays.med.uni-goettingen.de
-ReleaseLevel: devel
 
