@@ -1,6 +1,6 @@
 ## analyseMA.R -- program by Jobst Landgrebe and Frank Bretz to analyse
 ## microarray experiment designs
-# $Id: analyseMA.R,v 1.1 2003/08/20 17:49:50 jgentry Exp $
+# $Id: analyseMA.R,v 1.2 2003/10/02 16:11:37 jgentry Exp $
 
 # INPUT:
 # 	data    : G x N data matrix (rows: genes; columns: arrays)
@@ -16,6 +16,9 @@
 # 	for the F-test (where cinfo > 1), statistics (t or F), associated raw and adjusted
 # 	P-values, means square error and residual degrees of freedom	
 
+require(MASS)
+
+
 
 ########################
 
@@ -28,10 +31,15 @@ analyseMA <- function( data, design, id, cmat, cinfo, padj=c("none","bonferroni"
 	if (length(id)   != nrow(data))   {stop("lengths of id and data unequal")}
 	if (nrow(data) < 2 && padj != "none") {padj <- "none"}
 	if (!is.vector(id))		  {stop("id not a vector")}
+	if (!is.numeric(id))		  {stop("id must be numeric")}
 
-    	len    <- length(cinfo)
+    	len  <- length(cinfo)
+	
+	keep <- apply(data,1,function(x) sum(!is.na(x)) ) 
+	data <- data[keep>1,]
+	id   <- id[keep>1]
+	cat("Deleting ",length(keep[keep<=1])," genes with all but one or all measurements missing \n" )
 
-	# calling the main function
 	res <- t(apply(data, 1, core, design, cmat, cinfo, tol))
 
 	result     <- matrix(NA, nrow(data), 3*len + 3)
@@ -53,7 +61,7 @@ analyseMA <- function( data, design, id, cmat, cinfo, padj=c("none","bonferroni"
 	}
 	
 	if (padj != "none"){
-                result <- cbind(result, apply(res[,(2*len+1):(3*len)], 2, p.adjust, padj))
+                result <- cbind(result, apply(as.data.frame(res[,(2*len+1):(3*len)]), 2, p.adjust, padj))
                 colnames(result) <- c("ID",names.a,names.b,paste("raw.p",1:len,sep=""),
                                     "MSE","df.residual",paste(paste("p.adj",".",sep=""),padj,1:len,sep=""))
         } else {

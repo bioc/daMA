@@ -2,7 +2,7 @@
 ## microarray experiment designs
 
 
-# $Id: designMA.R,v 1.1 2003/08/20 17:49:50 jgentry Exp $
+# $Id: designMA.R,v 1.2 2003/10/02 16:11:37 jgentry Exp $
 
 
 # INPUT:
