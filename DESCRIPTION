@@ -13,4 +13,5 @@ Maintainer: Jobst Landgrebe <jlandgr1@gwdg.de>
 Depends: MASS
 License: GPL version 2 or newer
 URL: http://www.microarrays.med.uni-goettingen.de
+biocViews: Microarray, TwoChannel, Statistics, DifferentialExpression
 
