@@ -1,6 +1,6 @@
 ## analyseMA.R -- program by Jobst Landgrebe and Frank Bretz to analyse
 ## microarray experiment designs
-# $Id: analyseMA.R,v 1.2 2003/10/02 16:11:37 jgentry Exp $
+# $Id$
 
 # INPUT:
 # 	data    : G x N data matrix (rows: genes; columns: arrays)
