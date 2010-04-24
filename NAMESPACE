@@ -1,0 +1,5 @@
+importFrom(MASS, ginv)
+importFrom(stats, p.adjust, pf, pt)
+
+export(analyseMA, cinfo, cinfoB.AB, cmat, cmatB.AB, core, designMA,
+       designs.basic, designs.composite)

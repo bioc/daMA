@@ -10,7 +10,7 @@ Description: This package contains functions for the efficient design
         statistical analysis of factorial microarray data. Statistical
         details are described in Bretz et al. (2003, submitted)
 Maintainer: Jobst Landgrebe <jlandgr1@gwdg.de>
-Depends: MASS
+Imports: MASS, stats
 License: GPL (>= 2)
 URL: http://www.microarrays.med.uni-goettingen.de
 biocViews: Microarray, TwoChannel, Bioinformatics, DifferentialExpression
