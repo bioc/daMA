@@ -1,7 +1,7 @@
 Package: daMA
-Title: Efficient design and analysis of factorial two-colour
-        microarray data
-Version: 1.35.0
+Title: Efficient design and analysis of factorial two-colour microarray
+        data
+Version: 1.35.1
 Date: 1. October 2003
 Author: Jobst Landgrebe <jlandgr1@gwdg.de> and Frank Bretz
         <bretz@bioinf.uni-hannover.de>
@@ -13,5 +13,4 @@ Maintainer: Jobst Landgrebe <jlandgr1@gwdg.de>
 Imports: MASS, stats
 License: GPL (>= 2)
 URL: http://www.microarrays.med.uni-goettingen.de
-biocViews: Microarray, TwoChannel, Bioinformatics, DifferentialExpression
-
+biocViews: Microarray, TwoChannel, DifferentialExpression
