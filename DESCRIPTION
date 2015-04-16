@@ -1,7 +1,7 @@
 Package: daMA
 Title: Efficient design and analysis of factorial two-colour microarray
         data
-Version: 1.39.0
+Version: 1.40.0
 Date: 1. October 2003
 Author: Jobst Landgrebe <jlandgr1@gwdg.de> and Frank Bretz
         <bretz@bioinf.uni-hannover.de>
